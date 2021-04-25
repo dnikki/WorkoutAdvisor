@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/blue_background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/heading_tv"
+    <!--   Using this line only brings the view to the center
+      android:layout_centerHorizontal="true"-->
+
+    <!-- This is generally to place a view below a view.
+    best way is to use constraint layout here. in the complex layout
+     android:layout_below="@+id/heading_tv " -->
+
+
+    <Button
+        android:id="@+id/check_exercise_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/select_one_from_below"
-        android:textStyle="bold"/>
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circular_background_btn"
+        android:text="@string/check_workouts"
+        android:textColor="@color/white" />
 
     <FrameLayout
         android:id="@+id/spinnerLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/heading_tv"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/spinner_background">
 
@@ -33,18 +43,7 @@
 
     </FrameLayout>
 
-
-    <Button
-        android:id="@+id/check_exercise_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerLayout"
-        android:onClick="check"
-        android:text="@string/check_workouts"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        android:background="@drawable/circular_background_btn"/>
+<!--    Using listView is better than appending text to the TextView-->
 
     <ListView
         android:id="@+id/exercise_list_view"
@@ -53,6 +52,27 @@
         android:layout_below="@+id/check_exercise_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:scrollbars="none"/>
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/heading_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="@string/select_one_from_below"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/exercise_animation"
+        android:layout_width="240dp"
+        android:layout_height="220dp"
+        android:layout_margin="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_rawRes="@raw/exercise"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
+
 
 </RelativeLayout>

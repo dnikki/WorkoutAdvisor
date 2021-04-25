@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Workoutlist {
-    List<String> getworkouts(String workouttype) {
-        List<String> list = new ArrayList<>();
-        switch (workouttype) {
+    List<String> list = new ArrayList<>();
+
+    // if their are more than 3 conditions ->
+    // Switch is better than nested if else
+    List<String> getworkouts(String bodyPart) {
+        switch (bodyPart) {
             case "Chest":
                 list.add("Barbell Bench Press");
                 list.add("Pushups");
