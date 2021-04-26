@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">WorkoutAdvisor</string>
+    <string name="app_name">WorkoutAdvicer</string>
     <string name="check_workouts">Check</string>
+    <string name="select_one_from_below">Choose a body part you want to train today.</string>
+
     <string-array name="workout_types">
-        <item></item>
+        <item>Select from here.</item>
         <item>Chest</item>
         <item>Shoulders</item>
         <item>Abs</item>
