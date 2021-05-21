@@ -14,6 +14,15 @@
     best way is to use constraint layout here. in the complex layout
      android:layout_below="@+id/heading_tv " -->
 
+    <TextView
+        android:id="@+id/heading_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="@string/select_one_from_below"
+        android:textStyle="bold" />
+
 
     <Button
         android:id="@+id/check_exercise_btn"
@@ -23,7 +32,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/circular_background_btn"
-        android:text="@string/check_workouts"
+        android:text="Intermediate"
+        android:textColor="@color/white" />
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerLayout"
+        android:layout_toLeftOf="@+id/check_exercise_btn"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circular_background_btn"
+        android:text="Beginner"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/beginner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerLayout"
+        android:layout_toRightOf="@+id/check_exercise_btn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circular_background_btn"
+        android:text="Hard"
         android:textColor="@color/white" />
 
     <FrameLayout
@@ -54,14 +86,7 @@
         android:layout_marginTop="24dp"
         android:scrollbars="none" />
 
-    <TextView
-        android:id="@+id/heading_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/select_one_from_below"
-        android:textStyle="bold" />
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/exercise_animation"

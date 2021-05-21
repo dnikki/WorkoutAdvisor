@@ -22,8 +22,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     // so that we can use them anywhere.
     private ListView exerciseListView;
     private Button checkBtn;
+    private Button beginnerBtn;
+    private Button hardBtn;
     private Spinner spinner;
     private LottieAnimationView animationView;
+    private String type;
 
     // We can use this TAG anywhere to debug certain points of the code base.
     public String TAG = "mainActivity.BodyPart";
@@ -43,6 +46,15 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
         // It is generally to avoid Null pointer exceptions.
         checkBtn.setOnClickListener(view -> {
+            type="Intermediate";
+            Toast.makeText(this, spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+        });
+        beginnerBtn.setOnClickListener(view -> {
+            type="Beginner";
+            Toast.makeText(this, spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+        });
+        hardBtn.setOnClickListener(view -> {
+            type="Hard";
             Toast.makeText(this, spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
         });
     }
@@ -66,6 +78,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         // Initializing all the useful views in a single method.
         exerciseListView = findViewById(R.id.exercise_list_view);
         checkBtn = findViewById(R.id.check_exercise_btn);
+        beginnerBtn = findViewById(R.id.beginner);
+        hardBtn = findViewById(R.id.hard);
         spinner = findViewById(R.id.spinner);
         animationView = findViewById(R.id.exercise_animation);
     }
